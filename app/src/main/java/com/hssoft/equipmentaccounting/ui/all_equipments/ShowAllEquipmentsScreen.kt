@@ -1,4 +1,4 @@
-package com.hssoft.equipmentaccounting.ui.home
+package com.hssoft.equipmentaccounting.ui.all_equipments
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface

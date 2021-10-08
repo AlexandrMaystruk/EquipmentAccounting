@@ -3,7 +3,12 @@ package com.hssoft.equipmentaccounting.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.hssoft.equipmentaccounting.ui.debtors.DebtorsScreen
 import com.hssoft.equipmentaccounting.ui.home.HomeScreen
+import com.hssoft.equipmentaccounting.ui.rent.RentScreen
 import com.hssoft.equipmentaccounting.ui.theme.EquipmentAccountingTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +16,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EquipmentAccountingTheme {
-                HomeScreen()
+                val navController = rememberNavController()
+                NavHost(navController, "home") {
+                    composable("debtors") {
+                        DebtorsScreen(navController)
+                    }
+                    composable("rent") {
+                        RentScreen(navController)
+                    }
+                    composable("home") {
+                        HomeScreen()
+                    }
+                }
             }
         }
     }
