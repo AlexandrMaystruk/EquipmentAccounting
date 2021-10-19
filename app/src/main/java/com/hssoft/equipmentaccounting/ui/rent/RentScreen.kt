@@ -1,17 +1,11 @@
 package com.hssoft.equipmentaccounting.ui.rent
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import com.hssoft.equipmentaccounting.ui.theme.EquipmentAccountingTheme
 
 /**
  * Should show list of free equipment and basket in toolbar
@@ -20,22 +14,51 @@ import com.hssoft.equipmentaccounting.ui.theme.EquipmentAccountingTheme
 
 @Composable
 fun RentScreen(navController: NavHostController) {
-    Surface(
-        color = MaterialTheme.colors.background,
-        modifier = Modifier
-            .fillMaxSize(),
-    ) {
-
-
-
-    }
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "RentScreen")
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = {
+                            navController.popBackStack()
+                        }
+                    ) {
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "")
+                    }
+                })
+        },
+        backgroundColor = MaterialTheme.colors.background,
+        content = {
+            Text(text = "Rent screen content")
+        }
+    )
 }
-
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    EquipmentAccountingTheme {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "Rent Screen")
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = {
 
-    }
+                        }
+                    ) {
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "")
+                    }
+                })
+        },
+        backgroundColor = MaterialTheme.colors.background,
+        content = {
+            Text(text = "RentScreenContent")
+        }
+    )
 }

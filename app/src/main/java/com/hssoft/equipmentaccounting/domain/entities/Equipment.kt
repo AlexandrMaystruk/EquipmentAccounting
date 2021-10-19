@@ -1,4 +1,4 @@
-package com.hssoft.equipmentaccounting.model.entities
+package com.hssoft.equipmentaccounting.domain.entities
 
 data class Equipment(val name: String, val equipmentState: EquipmentState)
 

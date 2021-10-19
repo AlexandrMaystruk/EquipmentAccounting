@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.material.Scaffold
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,16 +23,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EquipmentAccountingTheme {
-                val navController = rememberNavController()
-                NavHost(navController, "home") {
-                    composable("debtors") {
-                        DebtorsScreen(navController)
-                    }
-                    composable("rent") {
-                        RentScreen(navController)
-                    }
-                    composable("home") {
-                        HomeScreen(hiltViewModel())
+                Scaffold{
+                    val navController = rememberNavController()
+                    NavHost(navController, "home") {
+                        composable("debtors") {
+                            DebtorsScreen(navController)
+                        }
+                        composable("rent") {
+                            RentScreen(navController)
+                        }
+                        composable("home") {
+                            HomeScreen(hiltViewModel(), navController)
+                        }
                     }
                 }
             }

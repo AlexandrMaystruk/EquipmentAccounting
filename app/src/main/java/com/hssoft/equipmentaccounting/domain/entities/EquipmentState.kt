@@ -1,4 +1,4 @@
-package com.hssoft.equipmentaccounting.model.entities
+package com.hssoft.equipmentaccounting.domain.entities
 
 import java.util.*
 

@@ -2,8 +2,8 @@ package com.hssoft.equipmentaccounting.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hssoft.equipmentaccounting.model.entities.Equipment
-import com.hssoft.equipmentaccounting.model.repositories.Repository
+import com.hssoft.equipmentaccounting.domain.entities.Equipment
+import com.hssoft.equipmentaccounting.domain.repositories.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
